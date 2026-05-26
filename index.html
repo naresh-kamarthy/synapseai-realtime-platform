@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── Primary Title ─────────────────────────────────────────── -->
+  <title>SynapseAI — Real-Time AI Collaboration Platform</title>
+
+  <!-- ─── SEO Meta Tags ─────────────────────────────────────────── -->
+  <meta name="description" content="SynapseAI is a real-time multi-model AI collaboration platform. Stream responses from multiple AI models side-by-side, collaborate in shared workspaces, and gain enterprise-grade analytics — all in one unified interface." />
+  <meta name="keywords" content="AI collaboration, multi-model AI, real-time AI streaming, AI SaaS platform, collaborative AI workspace, enterprise AI, AI comparison tool, parallel AI inference, team AI workspace, AI analytics dashboard" />
+  <meta name="author" content="SynapseAI Engineering" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="SynapseAI" />
+  <meta name="apple-mobile-web-app-title" content="SynapseAI" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-TileColor" content="#0f172a" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+  <!-- ─── OpenGraph / Social Preview ────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SynapseAI — Real-Time AI Collaboration Platform" />
+  <meta property="og:description" content="Stream, compare, and collaborate with multiple AI models in real-time. Enterprise-grade multi-model AI workspace for teams." />
+  <meta property="og:image" content="/og-preview.png" />
+  <meta property="og:url" content="https://synapseai.dev" />
+  <meta property="og:site_name" content="SynapseAI" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ─── Twitter / X Card ──────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SynapseAI — Real-Time AI Collaboration Platform" />
+  <meta name="twitter:description" content="Real-time multi-model AI streaming, side-by-side comparison, and collaborative workspaces. Built for teams." />
+  <meta name="twitter:image" content="/og-preview.png" />
+  <meta name="twitter:site" content="@synapseai" />
+
+  <!-- ─── Favicon System ────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- ─── PWA Manifest ──────────────────────────────────────────── -->
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- ─── Preconnect & Typography ───────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ─── Branded Loading Fallback ──────────────────────────────── -->
+  <style>
+    :root {
+      --brand-primary: #6366f1;
+      --brand-secondary: #22d3ee;
+      --brand-accent: #818cf8;
+      --brand-surface: #020617;
+      --brand-surface-elevated: #0f172a;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--brand-surface);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Branded splash screen — visible before React hydrates */
+    #root:empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--brand-surface);
+    }
+
+    #root:empty::before {
+      content: '';
+      width: 48px;
+      height: 48px;
+      border: 2px solid transparent;
+      border-top-color: var(--brand-primary);
+      border-right-color: var(--brand-secondary);
+      border-radius: 50%;
+      animation: synapse-spin 1s linear infinite;
+    }
+
+    #root:empty::after {
+      content: 'SynapseAI';
+      position: absolute;
+      bottom: calc(50% - 50px);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #475569;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    @keyframes synapse-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
