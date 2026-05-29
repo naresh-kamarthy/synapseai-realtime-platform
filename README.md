@@ -14,14 +14,6 @@ SynapseAI is a production-grade, real-time MERN SaaS platform that redefines how
 
 ---
 
-## 🔗 Quick Deployments & Portals
-
-*   **Live Demo Environment:** `https://synapseai-demo-sandbox.vercel.app`
-*   **Production Frontend Gateway:** `https://synapseai.io`
-*   **Production Backend REST/Socket Endpoint:** `https://api.synapseai.io`
-
----
-
 ## 🚀 2. Project Overview
 
 SynapseAI is an enterprise-grade solution designed to eliminate the single-user silos in modern generative AI tools. By shifting prompting into a real-time collaborative workspace, teams can build better prompt pipelines together. 
@@ -279,53 +271,7 @@ The administrative panel provides a centralized interface for monitoring platfor
 
 ---
 
-## 📂 10. Folder Structure
-
-```
-synapseai/                       # Root Project Workspace Folder
-├── src/                         # FRONTEND CODEBASE (Vite + React SPA)
-│   ├── admin/                   # Admin Telemetry & Audit Log Components
-│   │   └── AdminPanel.tsx       # Live Admin Dashboard UI
-│   ├── components/              # Reusable Interface Layouts
-│   │   ├── ChatArea.tsx         # Parallel comparative stream visualizer
-│   │   ├── Header.tsx           # Global navigation & status indicators
-│   │   ├── InviteModal.tsx      # Secure invitation generators
-│   │   ├── PromptBox.tsx        # Multiplayer prompt input editor
-│   │   ├── SavedResponses.tsx   # Curated prompt bookmarks
-│   │   └── Sidebar.tsx          # Channel lists & active user presence
-│   ├── stores/                  # Zustand Global State Engines
-│   │   ├── authStore.ts         # User session states
-│   │   ├── chatStore.ts         # Message aggregation
-│   │   ├── socketStore.ts       # Websocket event logic
-│   │   ├── uiStore.ts           # Panel toggle controls
-│   │   └── workspaceStore.ts    # Workspace metadata lists
-│   ├── App.tsx                  # Main router & page dispatcher
-│   ├── store.ts                 # Unified store entry point
-│   ├── index.css                # Tailwind 4 custom styles
-│   ├── main.tsx                 # App mounting point
-│   └── types.ts                 # Type definitions
-│
-├── server/                      # BACKEND CODEBASE (Node & WebSockets)
-│   ├── seed/                    # Database Seeder Scripts
-│   │   └── seedAdmin.ts         # Auto-seeder for superadmin credentials
-│   ├── ai.ts                    # LLM streaming wrappers & simulated streams
-│   ├── auth.ts                  # Hashing algorithms, JWT engines, cookie management
-│   ├── database.ts              # Mongoose schemas & MongoDB connection adapter
-│   ├── env_init.ts              # Environment variable loading & validation
-│   ├── routes.ts                # RESTful API route maps and controllers
-│   ├── socket.ts                # Socket.IO room sync loops, auth middleware
-│   └── validators.ts            # Input validation schemas (Zod)
-│
-├── dist/                        # Compiled production assets
-├── server.ts                    # App launch script (Express server + Vite middleware)
-├── vite.config.ts               # Vite configuration
-├── tsconfig.json                # TypeScript settings
-└── package.json                 # Project dependencies & launch scripts
-```
-
----
-
-## ⚙️ 11. Installation Guide
+## ⚙️ 10. Installation Guide
 
 ### Frontend Client Setup
 1.  Navigate to your terminal and clone the repository.
@@ -350,12 +296,11 @@ The server will initialize on port `3000`. Point your browser to `http://localho
 
 ---
 
-## 📄 12. Environment Variables
+## 📄 11. Environment Variables
 
 ### Frontend Variables
 Create a local `.env` file in the frontend build folder (or inject them via your Vercel control settings):
 ```env
-VITE_API_URL="http://localhost:3000/api"
 VITE_SOCKET_URL="http://localhost:3000"
 ```
 
@@ -377,7 +322,7 @@ CLIENT_URL="http://localhost:3000"
 MONGO_URI="mongodb+srv://admin-user:StrongPassword@cluster.mongodb.net/synapseai"
 
 # LLM Integrations
-GEMINI_API_KEY="AIzaSyYourGeminiApiKey"
+GEMINI_API_KEY="your_api_key"
 
 # Startup Autoseed Configuration
 ADMIN_NAME="System Super Administrator"
@@ -387,7 +332,7 @@ ADMIN_PASSWORD="Password@123"
 
 ---
 
-## 🚢 13. Deployment Guide
+## 🚢 12. Deployment Guide
 
 ### Vercel Deployment (Frontend Client SPA)
 Vercel is optimized to host your compiled single-page React assets:
@@ -396,7 +341,6 @@ Vercel is optimized to host your compiled single-page React assets:
 3.  Set the **Build Command** to: `npm run build`
 4.  Set the **Output Directory** to: `dist`
 5.  Inject the Environment variables:
-    *   `VITE_API_URL` -> Deployed Backend Gateway URL.
     *   `VITE_SOCKET_URL` -> Deployed Backend Socket Server URL.
 
 ### Railway or Render Deployment (Backend HTTP / Socket Server)
@@ -421,13 +365,13 @@ Run your backend in a persistent container environment supporting active WebSock
 
 ### Production Security Checklist:
 *   **Production Environment Setup:** Set `NODE_ENV` to `"production"`.
-*   **CORS Config:** Set `CLIENT_URL` to your production frontend domain (e.g., `https://synapseai.io`).
+*   **CORS Config:** Set `CLIENT_URL` to your production frontend domain.
 *   **Secure Cookies:** Refresh tokens are served with `secure: true` and `sameSite: 'none'`. This configuration requires active HTTPS connections to register cookies successfully.
 *   **HTTPS Requirements:** Ensure all routes run over secure HTTPS/WSS channels to prevent credential sniffing.
 
 ---
 
-## 🔒 14. Security Implementation
+## 🔒 13. Security Implementation
 
 SynapseAI is hardened against modern web application vulnerabilities:
 
@@ -455,7 +399,7 @@ SynapseAI is hardened against modern web application vulnerabilities:
 
 ---
 
-## 🚀 15. Performance Optimizations
+## 🚀 14. Performance Optimizations
 
 To maintain responsiveness under collaborative loads, the platform implements several optimization strategies:
 
@@ -484,7 +428,7 @@ To maintain responsiveness under collaborative loads, the platform implements se
 
 ---
 
-## 🗺️ 16. Future Roadmap
+## 🗺️ 15. Future Roadmap
 
 - [ ] **Redis scaling:** Integrate a Redis Pub/Sub adapter to sync socket rooms across multiple backend nodes behind load balancers.
 - [ ] **OpenAI/Claude integrations:** Add native API integrations with OpenAI's GPT-4o and Anthropic's Claude 3.5 Sonnet to support broader model comparisons.
@@ -495,7 +439,7 @@ To maintain responsiveness under collaborative loads, the platform implements se
 
 ---
 
-## 🎓 17. Resume Value Section
+## 🎓 16. Resume Value Section
 
 ### What This Project Demonstrates:
 *   **MERN Expertise:** Advanced full-stack integration of MongoDB, Express, React, and Node.js with strict type-safety across layers.
@@ -508,15 +452,14 @@ To maintain responsiveness under collaborative loads, the platform implements se
 
 ---
 
-## 👤 18. Author Section
+## 👤 17. Author Section
 
 *   **Lead Maintainer:** `Naresh Kamarthy`
-*   **GitHub Portfolio:** [github.com/naresh-kamarthy](https://github.com/naresh-kamarthy)
-*   **Professional Website:** [yourportfolio.com](https://yourportfolio.com)
+*   **Professional Website:** [Naresh Kamarthy Portfolio](https://naresh-kamarthy-portfolio.vercel.app)
 *   **LinkedIn Profile:** [linkedin.com/in/naresh-kamarthy-aa1239130](https://www.linkedin.com/in/naresh-kamarthy-aa1239130)
 
 ---
 
-## 📄 19. License
+## 📄 18. License
 
-Distributed under the MIT License. See [LICENSE](file:///c:/Users/Admin/Desktop/AI-Workspace_local/synapseai/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](file:///C:\Users\Admin\Desktop\AI-Workspace_MERN\synapseai-realtime-platform\LICENSE) for more information.
